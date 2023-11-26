@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1 Styling Options</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: mediumslateblue;
+            text-align: center;
+        }
+
+        #contentArea {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Part 1 Styling Options</h1>
+
+    <div id="contentArea">
+        <p>This is the content area. Apply styles using the form options below.</p>
+        <p>Try selecting different styles to see the dynamic changes.</p>
+        <p>Feel free to experiment!</p>
+    </div>
+
+    <form>
+        <label>Background Color:</label><br>
+        <input type="radio" name="bgColor" value="lavender"> Lavender<br>
+        <input type="radio" name="bgColor" value="lightblue"> Light Blue<br>
+        <input type="radio" name="bgColor" value="lightgreen"> Light Green<br>
+        <input type="radio" name="bgColor" value="red"> Red<br>
+
+        <br>
+
+        <label>Text Styles:</label><br>
+        <input type="checkbox" id="underlineCheckbox"> Underline<br>
+        <input type="checkbox" id="boldCheckbox"> Bold<br>
+        <input type="checkbox" id="italicCheckbox"> Italic<br>
+
+        <br>
+
+        <label>Font Size:</label>
+        <select id="fontSizeSelect">
+            <option value="1em">Small</option>
+            <option value="1.2em">Medium</option>
+            <option value="1.5em">Large</option>
+        </select>
+
+        <br>
+
+        <a href="">Go back to Homework 7</a>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var contentArea = document.getElementById('contentArea');
+            var bgColorRadios = document.getElementsByName('bgColor');
+            var underlineCheckbox = document.getElementById('underlineCheckbox');
+            var boldCheckbox = document.getElementById('boldCheckbox');
+            var italicCheckbox = document.getElementById('italicCheckbox');
+            var fontSizeSelect = document.getElementById('fontSizeSelect');
+
+            for (var i = 0; i < bgColorRadios.length; i++) {
+                bgColorRadios[i].addEventListener('change', applyStyles);
+            }
+
+            underlineCheckbox.addEventListener('change', applyStyles);
+            boldCheckbox.addEventListener('change', applyStyles);
+            italicCheckbox.addEventListener('change', applyStyles);
+            fontSizeSelect.addEventListener('change', applyStyles);
+
+            function applyStyles() {
+                var selectedBgColor = getSelectedRadioValue('bgColor');
+                var isUnderline = underlineCheckbox.checked;
+                var isBold = boldCheckbox.checked;
+                var isItalic = italicCheckbox.checked;
+                var selectedFontSize = fontSizeSelect.value;
+
+                contentArea.style.backgroundColor = selectedBgColor;
+                contentArea.style.textDecoration = isUnderline ? 'underline' : 'none';
+                contentArea.style.fontWeight = isBold ? 'bold' : 'normal';
+                contentArea.style.fontStyle = isItalic ? 'italic' : 'normal';
+                contentArea.style.fontSize = selectedFontSize;
+            }
+
+            function getSelectedRadioValue(name) {
+                var radios = document.getElementsByName(name);
+                for (var i = 0; i < radios.length; i++) {
+                    if (radios[i].checked) {
+                        return radios[i].value;
+                    }
+                }
+                return null; // Return null if no radio button is selected
+            }
+        });
+    </script>
+
+</body>
+</html>

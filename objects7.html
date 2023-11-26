@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT 133 Homework 7 - Object Model and Event Model</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: lavender;
+            color: blue;
+        }
+
+        h1 {
+            color: mediumslateblue;
+            text-align: center;
+        }
+
+        .part-description {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: mediumslateblue;
+        }
+
+        a {
+            color: dodgerblue;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #1E90FF;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CNIT 133 Homework 7 - Object Model and Event Model</h1>
+
+    <div id="part1" class="part-description">
+        <h2>Part 1: Object Model</h2>
+        <p>
+            Part 1 Covers the Object Model. Learn about JavaScript objects and their properties, methods, and how to manipulate them.
+            <br>
+            <a href="">Go to Part 1</a>
+        </p>
+    </div>
+
+    <div id="part2" class="part-description">
+        <h2>Part 2: Event Model</h2>
+        <p>
+            Part 2 Focuses on the Event Model. Explore how to handle events in JavaScript and jQuery, making your web pages interactive.
+            <br>
+            <a href="">Go to Part 2</a>
+        </p>
+    </div>
+
+    <a href="https://hills.ccsf.edu/~ynasir1/thenumber1.html">Go back to Homework 1</a>
+
+    <script>
+        // Show/hide part descriptions on click
+        document.addEventListener('DOMContentLoaded', function() {
+            var part1 = document.getElementById('part1');
+            var part2 = document.getElementById('part2');
+
+            part1.style.display = 'block';
+            part2.style.display = 'block';
+
+            part1.addEventListener('click', function() {
+                part1.style.display = 'block';
+                part2.style.display = 'none';
+            });
+
+            part2.addEventListener('click', function() {
+                part1.style.display = 'none';
+                part2.style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>

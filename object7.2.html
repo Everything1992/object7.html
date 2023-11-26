@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Navigation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #512DA8;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #3498DB;
+            border-radius: 5px;
+        }
+
+        li {
+            margin: 0;
+            padding: 10px 15px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        li:hover {
+            background-color: #2980B9;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #3498DB;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        li:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #2980B9;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #1F618D;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Homework Navigation</h1>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Homeworks</a>
+                <div class="dropdown-content">
+                    <a href="https://everything1992.github.io/cnit133-2nd-attempt-hw-2/hw.2.2">Homework 2</a>
+                    <a href="https://everything1992.github.io/homework3/">Homework 3</a>
+                    <a href="https://everything1992.github.io/hmw4.index/homework4.html">Homework 4</a>
+                    <a href="">Homework 7</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+</html>
